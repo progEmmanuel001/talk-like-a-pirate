@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Talk like a pirate</title>
+</head>
+<style type="text/css">
+textarea {
+width: 400px;
+height: 200px;
+font-family: arial;
+}
+</style>
+<body>
+<h2>Landlubbers</h2>
+<textarea id="normal"></textarea>
+
+<h2>Pirates</h2>
+<textarea id="pirate"></textarea>
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+ var words = $("#normal").keyup(function(){
+var words = $("#normal").val();
+words = words.replace(/hello/gi, "ahoy");
+words = words.replace(/^/, "Arr, me hearties. ");
+words = words.replace(/friend/gi, "matey");
+words = words.replace(/my/gi, "me");
+words = words.replace(/is/gi, "be");
+words = words.replace(/(\w+)ev(\w+)\s/g, "$1e'$2 ");
+$("#pirate").val(words);
+});
+</script>
+</body>
+</html>
